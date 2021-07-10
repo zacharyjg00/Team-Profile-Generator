@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/zacharyjg00/Team-Profile-Generator#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "inquirer": "^8.1.1",
     "jest": "^27.0.6"
   }
