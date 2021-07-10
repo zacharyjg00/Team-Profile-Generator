@@ -117,8 +117,11 @@ const start = () => {
                 break;
 
             case "Finish building team":
+                console.log(team);
                 console.log("Team successfully built! Please check HTML file for generated team webpage.")
                 break;
         }
     })
 }
+
+addManager();
