@@ -1,11 +1,14 @@
+// All of the required packages and classes for the app
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+// This is the array that all team members will be pushed to once added
 let team = [];
 
+// This is the beginning of the html file as a string to be used later to write the file
 const htmlBeginning = `<!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +28,13 @@ const htmlBeginning = `<!DOCTYPE html>
     <div class="row justify-content-around">
 `;
 
+// These are the closing tags for the html file
 const htmlEnding = `</div>
 </body>
 
 </html>`;
+
+// This method adds a manager class object to the team array
 const addManager = () => {
     inquirer.prompt([
         {
@@ -60,6 +66,7 @@ const addManager = () => {
     });
 }
 
+// This method adds an engineer class object to the team array
 const addEngineer = () => {
     inquirer.prompt([
         {
@@ -91,6 +98,7 @@ const addEngineer = () => {
     });
 }
 
+// This method adds an intern class object to the team array
 const addIntern = () => {
     inquirer.prompt([
         {
@@ -123,6 +131,7 @@ const addIntern = () => {
     });
 }
 
+// This method creates the html content to be written as well as writes it to an html file named index.html
 const renderHTML = () => {
     let htmlContent = "";
     htmlContent += htmlBeginning;
@@ -180,7 +189,7 @@ const renderHTML = () => {
 }
 
 
-
+// This method is the prompt for the user to either add more members to the team or finish creating the team and make the html file
 const start = () => {
     inquirer.prompt([
         {
@@ -207,4 +216,5 @@ const start = () => {
     })
 }
 
+// This is the initial call to start the app upon running node index.js. It starts by prompting the user to give info on the manager
 addManager();
